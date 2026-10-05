@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSpot - Descubre y Vota los Mejores Lugares</title>
+    
+    <!-- Fuentes: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-slate-800 antialiased overflow-x-hidden relative">
+
+    <!-- Fondos decorativos -->
+    <div class="blob-bg bg-brand-500 w-96 h-96 rounded-full top-0 left-[-10%]"></div>
+    <div class="blob-bg bg-accent-500 w-96 h-96 rounded-full top-[20%] right-[-10%]"></div>
+
+    <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-map-pin-line text-3xl text-brand-600"></i>
+                    <span class="font-bold text-2xl tracking-tight text-slate-900">Rank<span class="text-brand-600">Spot</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#como-funciona" class="text-slate-600 hover:text-brand-600 transition-colors font-medium">Cómo Funciona</a>
+                    <a href="#caracteristicas" class="text-slate-600 hover:text-brand-600 transition-colors font-medium">Características</a>
+                </div>
+                <div class="hidden md:flex">
+                    <a href="#descargar" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Descargar App
+                    </a>
+                </div>
+                <!-- Menú móvil (simplificado) -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-slate-600 hover:text-slate-900 focus:outline-none">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN HERO CON ANIMACIÓN -->
+    <section class="pt-32 pb-10 lg:pt-48 lg:pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
+                
+                <!-- Columna Izquierda: Textos y Botones (Entrada desde la izquierda) -->
+                <div class="info-slide-right opacity-0">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-600 font-medium text-sm mb-6 border border-brand-100">
+                        <span class="relative flex h-3 w-3">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-500"></span>
+                        </span>
+                        Próximamente en iOS y Android
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                        Descubre los mejores sitios <br class="hidden lg:block">
+                        <span class="gradient-text">elegidos por ti</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl leading-relaxed">
+                        No confíes en críticas aburridas. Únete a la comunidad que clasifica, recomienda y descubre los secretos mejor guardados de tu ciudad en tiempo real.
+                    </p>
+                    
+                    <!-- Botones de descarga -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="flex items-center justify-center gap-3 bg-slate-900 text-white px-6 py-3.5 rounded-xl hover:bg-slate-800 transition-all hover:-translate-y-1 hover:shadow-lg">
+                            <i class="ph-fill ph-apple-logo text-3xl"></i>
+                            <div class="text-left">
+                                <div class="text-[10px] leading-none text-slate-300">Descárgalo en la</div>
+                                <div class="text-lg font-semibold leading-tight">App Store</div>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-center justify-center gap-3 bg-brand-600 text-white px-6 py-3.5 rounded-xl hover:bg-brand-700 transition-all hover:-translate-y-1 hover:shadow-lg lg:hover:shadow-brand-500/30">
+                            <i class="ph-fill ph-google-play-logo text-3xl"></i>
+                            <div class="text-left">
+                                <div class="text-[10px] leading-none text-brand-100">Disponible en</div>
+                                <div class="text-lg font-semibold leading-tight">Google Play</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Animación de Estrellas (Entrada desde la derecha) -->
+                <div class="flex flex-col justify-center items-center lg:items-end w-full mt-10 lg:mt-0">
+                    <div class="stars-group flex gap-2 sm:gap-4 relative opacity-0">
+                        <!-- Estrella 1 -->
+                        <div class="star-container relative w-14 h-14 lg:w-20 lg:h-20">
+                            <i class="ph ph-star text-5xl lg:text-7xl text-slate-200 absolute inset-0"></i>
+                            <i class="ph-fill ph-star text-5xl lg:text-7xl text-yellow-400 absolute inset-0 filled-star"></i>
+                        </div>
+                        <!-- Estrella 2 -->
+                        <div class="star-container relative w-14 h-14 lg:w-20 lg:h-20">
+                            <i class="ph ph-star text-5xl lg:text-7xl text-slate-200 absolute inset-0"></i>
+                            <i class="ph-fill ph-star text-5xl lg:text-7xl text-yellow-400 absolute inset-0 filled-star"></i>
+                        </div>
+                        <!-- Estrella 3 -->
+                        <div class="star-container relative w-14 h-14 lg:w-20 lg:h-20">
+                            <i class="ph ph-star text-5xl lg:text-7xl text-slate-200 absolute inset-0"></i>
+                            <i class="ph-fill ph-star text-5xl lg:text-7xl text-yellow-400 absolute inset-0 filled-star"></i>
+                        </div>
+                        <!-- Estrella 4 -->
+                        <div class="star-container relative w-14 h-14 lg:w-20 lg:h-20">
+                            <i class="ph ph-star text-5xl lg:text-7xl text-slate-200 absolute inset-0"></i>
+                            <i class="ph-fill ph-star text-5xl lg:text-7xl text-yellow-400 absolute inset-0 filled-star"></i>
+                        </div>
+                        <!-- Estrella 5 -->
+                        <div class="star-container relative w-14 h-14 lg:w-20 lg:h-20">
+                            <i class="ph ph-star text-5xl lg:text-7xl text-slate-200 absolute inset-0"></i>
+                            <i class="ph-fill ph-star text-5xl lg:text-7xl text-yellow-400 absolute inset-0 filled-star"></i>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-xl lg:text-2xl font-bold text-slate-800 fade-in-text opacity-0">¡Tu opinión decide!</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: MOCKUP DEL TELÉFONO -->
+    <!-- NUEVA SECCIÓN: MOCKUP DEL TELÉFONO CON ISLA DINÁMICA -->
+    <section class="py-24 relative bg-gradient-to-b from-transparent to-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Columna Izquierda: Teléfono Animado (orden 1 en desktop) -->
+                <div class="relative mx-auto w-full max-w-[320px] lg:max-w-[340px] fade-in-up order-2 lg:order-1 mt-10 lg:mt-0">
+                    
+                    <!-- Contenedor del Teléfono Moderno -->
+                    <div class="phone-mockup-modern aspect-[9/19.5]">
+                        <!-- La Isla Dinámica -->
+                        <div class="dynamic-island"></div>
+                        
+                        <!-- Contenido de la Pantalla Animada -->
+                        <div class="screen-content">
+                            <!-- Cabecera de la app simulada -->
+                            <div class="app-header">
+                                <h3 class="font-extrabold text-xl text-slate-900">Top Lugares</h3>
+                            </div>
+                            
+                            <!-- Contenedor que hace scroll automático -->
+                            <div class="scrolling-feed">
+                                <!-- Tarjeta de app 1 -->
+                                <div class="sim-card">
+                                    <div class="sim-img bg-brand-200"></div>
+                                    <div class="sim-text-1"></div>
+                                    <div class="sim-text-2"></div>
+                                </div>
+                                <!-- Tarjeta de app 2 -->
+                                <div class="sim-card">
+                                    <div class="sim-img bg-accent-200"></div>
+                                    <div class="sim-text-1"></div>
+                                    <div class="sim-text-2"></div>
+                                </div>
+                                <!-- Tarjeta de app 3 -->
+                                <div class="sim-card">
+                                    <div class="sim-img bg-pink-200"></div>
+                                    <div class="sim-text-1"></div>
+                                    <div class="sim-text-2"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Círculo que simula el dedo haciendo "tap" -->
+                            <div class="tap-indicator"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Elemento decorativo flotante -->
+                    <div class="absolute -right-8 top-1/3 bg-white p-4 rounded-2xl shadow-xl z-20 animate-bounce" style="animation-duration: 4s;">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center">
+                                <i class="ph-fill ph-trend-up text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-semibold">Burger Spot</p>
+                                <p class="text-sm font-bold text-slate-800">Sube al Top #3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Información (orden 2 en desktop) -->
+                <div class="fade-in-up order-1 lg:order-2">
+                    <h2 class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-3">Experiencia Fluida</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Encuentra tu próximo lugar favorito en segundos</h3>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Nuestra interfaz está diseñada para que explorar sea adictivo. Navega por categorías, mira qué está de moda cerca de ti e interactúa con la comunidad local.
+                    </p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600 mt-1">
+                                <i class="ph-bold ph-hand-swipe-left text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">Navegación Intuitiva</h4>
+                                <p class="text-slate-600">Desliza, vota y guarda con una sola mano. Hecho para usarse mientras caminas por la ciudad.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-accent-50 border border-accent-100 flex items-center justify-center text-accent-600 mt-1">
+                                <i class="ph-bold ph-chart-line-up text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">Rankings Locales Dinámicos</h4>
+                                <p class="text-slate-600">Las listas cambian en tiempo real según la comunidad. Sin favoritismos, solo votos reales.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona" class="py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h2 class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-3">Tu ciudad en 3 pasos</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">¿Cómo funciona RankSpot?</h3>
+                <p class="text-lg text-slate-600">
+                    Hemos creado la forma más fácil y divertida de saber a dónde ir, basándonos en la opinión real de las personas que viven tu misma zona.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Paso 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 relative z-10 border border-slate-100 fade-in-up">
+                    <div class="w-16 h-16 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
+                        <i class="ph ph-compass text-3xl"></i>
+                    </div>
+                    <div class="absolute top-8 right-8 text-6xl font-black text-slate-50 opacity-50 z-[-1]">1</div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-4">Descubre</h4>
+                    <p class="text-slate-600 leading-relaxed">
+                        Abre la app y explora el mapa interactivo. Encuentra lugares ocultos, restaurantes de moda o parques tranquilos recomendados por la comunidad.
+                    </p>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 relative z-10 border border-slate-100 fade-in-up" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 bg-accent-50 text-accent-500 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
+                        <i class="ph ph-ranking text-3xl"></i>
+                    </div>
+                    <div class="absolute top-8 right-8 text-6xl font-black text-slate-50 opacity-50 z-[-1]">2</div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-4">Vota y Rankea</h4>
+                    <p class="text-slate-600 leading-relaxed">
+                        ¿Fuiste a un sitio increíble? Dale tu voto positivo. Tú decides quién sube al top del ranking en cada categoría. Las reseñas honestas mandan.
+                    </p>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 relative z-10 border border-slate-100 fade-in-up" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 bg-pink-50 text-pink-500 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
+                        <i class="ph ph-share-network text-3xl"></i>
+                    </div>
+                    <div class="absolute top-8 right-8 text-6xl font-black text-slate-50 opacity-50 z-[-1]">3</div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-4">Comparte</h4>
+                    <p class="text-slate-600 leading-relaxed">
+                        Crea listas personalizadas, compártelas con tus amigos y conviértete en un "Local Guide" de confianza dentro de tu ciudad.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="caracteristicas" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Mucho más que simples reseñas de cinco estrellas</h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                    <i class="ph ph-map-pin text-xl"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Relevancia por Zonas</h4>
+                                <p class="text-slate-600">Los rankings se ajustan a la zona en la que te encuentras. Ve lo mejor de tu barrio o de la zona a la que vas a viajar.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                    <i class="ph ph-shield-check text-xl"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Cero Fake Reviews</h4>
+                                <p class="text-slate-600">Nuestro algoritmo penaliza las cuentas falsas. Solo mostramos recomendaciones de personas reales que han estado en el lugar.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600">
+                                    <i class="ph ph-trend-up text-xl"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Tendencias en Tiempo Real</h4>
+                                <p class="text-slate-600">Descubre qué lugares están "on fire" esta misma noche o qué cafetería es la más popular este domingo por la mañana.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2 bg-slate-100 rounded-[3rem] p-8 lg:p-12 relative fade-in-up">
+                    <img src="https://placehold.co/600x600/e2e8f0/475569?text=Gráfico+de\nCaracterísticas" alt="Características de la app" class="rounded-2xl shadow-2xl w-full">
+                    <!-- Elemento decorativo -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl flex items-center gap-4">
+                        <div class="text-brand-600 bg-brand-50 p-3 rounded-full">
+                            <i class="ph-fill ph-check-circle text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-lg">100% Gratuita</p>
+                            <p class="text-slate-500 text-sm">Para todos los usuarios</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="descargar" class="py-20 relative overflow-hidden">
+        <!-- Fondo CTA -->
+        <div class="absolute inset-0 bg-slate-900 z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-900 to-slate-900 opacity-90 z-0"></div>
+        <div class="blob-bg bg-brand-500 w-[40rem] h-[40rem] rounded-full top-[10%] left-[50%] transform -translate-x-1/2 z-0 opacity-20"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center fade-in-up">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">¿Listo para cambiar la forma en que exploras tu ciudad?</h2>
+            <p class="text-xl text-slate-300 mb-10">Sé uno de los primeros en probar RankSpot y ayuda a construir el mapa de lo mejor que tu ciudad tiene para ofrecer.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="flex items-center justify-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-xl hover:bg-slate-100 transition-all hover:-translate-y-1 shadow-xl">
+                    <i class="ph-fill ph-apple-logo text-3xl"></i>
+                    <div class="text-left">
+                        <div class="text-[10px] leading-none text-slate-500 uppercase font-bold tracking-wider">Descargar en</div>
+                        <div class="text-lg font-bold leading-tight">App Store</div>
+                    </div>
+                </a>
+                <a href="#" class="flex items-center justify-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl hover:bg-white/20 transition-all hover:-translate-y-1 shadow-xl">
+                    <i class="ph-fill ph-google-play-logo text-3xl"></i>
+                    <div class="text-left">
+                        <div class="text-[10px] leading-none text-slate-300 uppercase font-bold tracking-wider">Obtener en</div>
+                        <div class="text-lg font-bold leading-tight">Google Play</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-50 border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <i class="ph-fill ph-map-pin-line text-2xl text-brand-600"></i>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">Rank<span class="text-brand-600">Spot</span></span>
+                </div>
+                
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="#" class="text-slate-400 hover:text-brand-600 transition-colors">
+                        <i class="ph-fill ph-instagram-logo text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-brand-600 transition-colors">
+                        <i class="ph-fill ph-twitter-logo text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-brand-600 transition-colors">
+                        <i class="ph-fill ph-tiktok-logo text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-slate-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+                <p>&copy; 2026 RankSpot Inc. Todos los derechos reservados.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-slate-900">Privacidad</a>
+                    <a href="#" class="hover:text-slate-900">Términos</a>
+                    <a href="#" class="hover:text-slate-900">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
