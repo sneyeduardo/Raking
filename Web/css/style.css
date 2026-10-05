@@ -1,0 +1,229 @@
+
+.gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #14b8a6, #8b5cf6);
+        }
+        
+        .blob-bg {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mockup de teléfono con CSS */
+        .phone-mockup {
+            border: 12px solid #1f2937;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            background-color: white;
+        }
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 24px;
+            background-color: #1f2937;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            z-index: 10;
+        }
+/* =========================================================
+   ANIMACIONES DE LA SECCIÓN HERO
+   ========================================================= */
+
+/* 1. Información entrando desde la izquierda */
+.info-slide-right {
+    animation: slideRight 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(-80px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* 2. Grupo de estrellas entrando desde la derecha */
+.stars-group {
+    animation: slideLeft 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideLeft {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* 3. Llenado de estrellas (efecto rebote y color) */
+.filled-star {
+    opacity: 0;
+    transform: scale(0);
+    /* Inician ocultas y crecen */
+    animation: fillStar 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Retrasos progresivos para que se llenen de izquierda a derecha */
+.star-container:nth-child(1) .filled-star { animation-delay: 1.0s; }
+.star-container:nth-child(2) .filled-star { animation-delay: 1.2s; }
+.star-container:nth-child(3) .filled-star { animation-delay: 1.4s; }
+.star-container:nth-child(4) .filled-star { animation-delay: 1.6s; }
+.star-container:nth-child(5) .filled-star { animation-delay: 1.8s; }
+
+@keyframes fillStar {
+    0% { opacity: 0; transform: scale(0.3); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* 4. Texto debajo de las estrellas apareciendo al final */
+.fade-in-text {
+    animation: fadeIn 0.5s ease-out 2.2s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* =========================================================
+   NUEVO MOCKUP CON ISLA DINÁMICA Y ANIMACIÓN DE APP
+   ========================================================= */
+
+.phone-mockup-modern {
+    border: 14px solid #101010;
+    border-radius: 48px; /* Bordes más curvos */
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3), inset 0 0 0 2px #333;
+    position: relative;
+    background-color: #f8fafc;
+}
+
+/* La Isla Dinámica */
+.dynamic-island {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32%;
+    height: 32px;
+    background-color: #000;
+    border-radius: 20px;
+    z-index: 50;
+}
+
+/* Contenedor de la pantalla interna */
+.screen-content {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background-color: #f1f5f9;
+}
+
+/* Header falso para que la Isla Dinámica resalte */
+.app-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 40;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 20px 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* El contenido que sube y baja */
+.scrolling-feed {
+    padding: 110px 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Animación de desplazamiento infinito */
+    animation: autoScroll 9s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+/* Tarjetas simuladas */
+.sim-card {
+    background: white;
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.sim-img {
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+.sim-text-1 {
+    height: 16px;
+    width: 70%;
+    background-color: #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+.sim-text-2 {
+    height: 12px;
+    width: 40%;
+    background-color: #f1f5f9;
+    border-radius: 6px;
+}
+
+/* Círculo que simula el dedo haciendo "tap" */
+.tap-indicator {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 100;
+    pointer-events: none;
+    backdrop-filter: blur(2px);
+    /* Animación de los clics */
+    animation: simulateTap 9s infinite;
+}
+
+/* KEYFRAMES (Fotogramas de la animación) */
+@keyframes autoScroll {
+    0%, 15% { transform: translateY(0); }
+    33%, 48% { transform: translateY(-205px); } /* Baja a la 2da tarjeta */
+    66%, 81% { transform: translateY(-410px); } /* Baja a la 3ra tarjeta */
+    100% { transform: translateY(0); } /* Reinicia */
+}
+
+@keyframes simulateTap {
+    0%, 12% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    13% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    15% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    
+    30% { transform: translate(-50%, -50%) scale(0); opacity: 0; top: 60%; left: 40%; }
+    31% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    33% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+
+    63% { transform: translate(-50%, -50%) scale(0); opacity: 0; top: 40%; left: 60%; }
+    64% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    66% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    
+    100% { transform: translate(-50%, -50%) scale(0); opacity: 0; top: 55%; left: 50%; }
+}
