@@ -320,6 +320,6 @@ app.get('/api/comercios/categoria/:categoria', async (req, res) => {
         res.status(500).json({ error: 'Error obteniendo el ranking por categoría' });
     }
 });
-app.listen(port, () => {
-    console.log(`🚀 API conectada a MySQL corriendo en http://localhost:${port}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
