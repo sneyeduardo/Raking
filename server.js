@@ -12,7 +12,7 @@ app.use(express.json());
 
 // 1. Configuración del Pool de Conexiones a Aiven MySQL
 const pool = mysql.createPool({
-    uri: 'mysql://avnadmin:AVNS_dsgJ984KpSFsK2VpnpS@corretaje2-sneyeduardo4-a9be.i.aivencloud.com:16420/Raking?ssl-mode=REQUIRED', // Ej: mysql://user:password@host:port/defaultdb
+    uri: 'mysql://avnadmin:AVNS_dsgJ984KpSFsK2VpnpS@corretaje2-sneyeduardo4-a9be.i.aivencloud.com:16420/Raking', // Ej: mysql://user:password@host:port/defaultdb
     ssl: {
         rejectUnauthorized: false // Aiven requiere SSL
     },
