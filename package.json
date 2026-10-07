@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "API para la app móvil de RankSpot",
   "main": "server.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
@@ -21,9 +22,5 @@
     "mysql2": "^3.24.5",
     "sqlite3": "^6.0.1",
     "uuid": "^14.0.2"
-  },
-  "type": "commonjs"
-}
-"scripts": {
-    "start": "node server.js"
   }
+}
