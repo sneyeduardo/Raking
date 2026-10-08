@@ -2,7 +2,8 @@ const express = require('express');
 const mysql = require('mysql2/promise');
 const cors = require('cors');
 const app = express();
-const port = process.env.PORT || 3000;
+// Línea 5
+const PORT = process.env.PORT || 3000;
 const axios = require('axios');
 const { v4: uuidv4 } = require('uuid');
 const BREVO_API_KEY = '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'; // Reemplaza esto
