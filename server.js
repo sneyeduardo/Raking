@@ -15,6 +15,13 @@ app.use(cors());
 app.use(express.json());
 
 // 1. Configuración del Pool Aiven MySQL
+const mysql = require('mysql2/promise'); // O 'mysql2' dependiendo de cómo lo uses
+
+if (!process.env.DB_URI) {
+    console.error("❌ ERROR: La variable de entorno DB_URI no está definida.");
+    process.exit(1);
+}
+
 const pool = mysql.createPool({
     uri: process.env.DB_URI,
     ssl: { rejectUnauthorized: false },
@@ -23,6 +30,8 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     queueLimit: 0
 });
+
+module.exports = pool;
 
 // Inicialización y Migración de Tablas Seguras
 pool.getConnection()
