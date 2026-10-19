@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 // 1. Configuración del Pool Aiven MySQL
-const mysql = require('mysql2/promise'); // O 'mysql2' dependiendo de cómo lo uses
+
 
 if (!process.env.DB_URI) {
     console.error("❌ ERROR: La variable de entorno DB_URI no está definida.");
