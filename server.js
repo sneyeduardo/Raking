@@ -177,6 +177,7 @@ app.post('/api/auth/register', async (req, res) => {
 
 app.post('/api/auth/login', async (req, res) => {
     try {
+        console.log("🔑 DATOS RECIBIDOS EN LOGIN:", req.body);
         const { correo, password } = req.body;
         const [rows] = await pool.execute('SELECT * FROM usuarios WHERE correo = ?', [correo]);
 
