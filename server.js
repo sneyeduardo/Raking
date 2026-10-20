@@ -146,6 +146,7 @@ async function enviarCorreoBrevo(toEmail, toName, subject, htmlContent) {
 
 app.post('/api/auth/register', async (req, res) => {
     try {
+        console.log("📥 DATOS RECIBIDOS EN REGISTRO:", req.body);
         const { nombre, apellido, correo, telefono, password } = req.body;
         if (!nombre || !apellido || !correo || !telefono || !password) {
             return res.status(400).json({ error: 'Todos los campos son obligatorios' });
