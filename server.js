@@ -179,13 +179,27 @@ app.post('/api/auth/login', async (req, res) => {
     try {
         console.log("🔑 DATOS RECIBIDOS EN LOGIN:", req.body);
         const { correo, password } = req.body;
+        
         const [rows] = await pool.execute('SELECT * FROM usuarios WHERE correo = ?', [correo]);
 
-        if (rows.length === 0) return res.status(401).json({ error: 'Correo o contraseña incorrectos' });
+        if (rows.length === 0) {
+            console.log("❌ RESULTADO: El correo no existe en la base de datos.");
+            return res.status(401).json({ error: 'Correo o contraseña incorrectos' });
+        }
 
         const usuario = rows[0];
-        const validPassword = await bcrypt.compare(String(password).trim(), usuario.password);
-        if (!validPassword) return res.status(401).json({ error: 'Correo o contraseña incorrectos' });
+        console.log("✅ RESULTADO: Usuario encontrado en la BD.");
+        console.log("🔐 Hash guardado en DB:", usuario.password);
+        console.log("📏 Longitud del hash:", usuario.password.length);
+
+        const passwordLimpia = String(password).trim();
+        const validPassword = await bcrypt.compare(passwordLimpia, usuario.password);
+        
+        console.log("⚖️ ¿Bcrypt dice que coinciden?:", validPassword);
+
+        if (!validPassword) {
+            return res.status(401).json({ error: 'Correo o contraseña incorrectos' });
+        }
 
         const token = jwt.sign(
             { id: usuario.id, rol: usuario.rol },
