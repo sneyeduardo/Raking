@@ -15,13 +15,6 @@ app.use(cors());
 app.use(express.json());
 
 // 1. Configuración del Pool Aiven MySQL
-
-
-if (!process.env.DB_URI) {
-    console.error("❌ ERROR: La variable de entorno DB_URI no está definida.");
-    process.exit(1);
-}
-
 const pool = mysql.createPool({
     uri: process.env.DB_URI,
     ssl: { rejectUnauthorized: false },
@@ -30,8 +23,6 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     queueLimit: 0
 });
-
-module.exports = pool;
 
 // Inicialización y Migración de Tablas Seguras
 pool.getConnection()
@@ -161,7 +152,7 @@ app.post('/api/auth/register', async (req, res) => {
         }
 
         const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(password, salt);
+        const hashedPassword = await bcrypt.hash(String(password).trim(), salt);
 
         await pool.execute(
             'INSERT INTO usuarios (nombre, apellido, correo, telefono, password) VALUES (?, ?, ?, ?, ?)',
@@ -191,7 +182,7 @@ app.post('/api/auth/login', async (req, res) => {
         if (rows.length === 0) return res.status(401).json({ error: 'Correo o contraseña incorrectos' });
 
         const usuario = rows[0];
-        const validPassword = await bcrypt.compare(password, usuario.password);
+        const validPassword = await bcrypt.compare(String(password).trim(), usuario.password);
         if (!validPassword) return res.status(401).json({ error: 'Correo o contraseña incorrectos' });
 
         const token = jwt.sign(
